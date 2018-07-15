@@ -26,7 +26,7 @@ def worker():
 try:
     command = ''
     camera = PiCamera()
-
+	camera.rotation  = 180
     while (True):
         
         #if(command == 'y'):
@@ -69,9 +69,7 @@ try:
                 f.write('%s,%s,%s,%s,%s,%s,%s,%s,%s,%s \n' % (str(i[0]),str(i[1]),str(i[2]),str(i[3]),str(i[4]),str(i[5]),str(i[6]),str(i[7]),str(i[8]),str(i[9])))
             f.close()
 
-			image = misc.imread(imagefile)
-            rotate_image = ndimage.rotate(image, 180) 
-			misc.imsave(imagefile, rotate_image)
+			 
             log.logInfo("Data captured and saved to  " + datafile)
         #else:             
             #command = raw_input('Do you want to take a photo y/n ? ')
