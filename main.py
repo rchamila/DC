@@ -49,7 +49,8 @@ try:
             log.logInfo('Camera started...')
 
             i = datetime.datetime.now()  
-            imagefile = "/home/pi/source/DC/Files/Image_"+ str(i) + ".jpg"
+			timestmp = str(i).replace(":",".");
+            imagefile = "/home/pi/source/DC/Files/Image_"+ timestmp + ".jpg"
             camera.capture(imagefile)
 
             log.logInfo('Image captured and saved to '  + imagefile)
@@ -60,7 +61,7 @@ try:
             
             imu.stoprec()
 
-            datafile = "/home/pi/source/DC/Files/SensorData_"+ str(i) + ".txt"
+            datafile = "/home/pi/source/DC/Files/SensorData_"+ timestmp + ".txt"
                         
             f= open(datafile,"w+")
             for i in imu.DATA:
