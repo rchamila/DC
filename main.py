@@ -62,7 +62,7 @@ try:
             
             imu.stoprec()
 
-            datafile = "/home/pi/source/DC/Files/SensorData_"+ timestmp + ".txt"
+            datafile = "/home/pi/source/DC/Files/SensorData_"+ timestmp + ".csv"
                         
             f= open(datafile,"w+")
             for i in imu.DATA:
